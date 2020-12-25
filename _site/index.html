@@ -48,6 +48,8 @@
 <!-- https://refreshless.com/wnumb/ -->
 <script src="/js/wNumb.min.js"></script>
 
+<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
+
 
 
 
@@ -156,22 +158,12 @@ function handleABCFileSelect(evt) {
 </script>
 
 <script type="module">
-// This is the "Offline copy of pages" service worker
+import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
-// Add this below content to your HTML page inside a <script type="module"></script>
-<p>tag, or add the js file to your page at the very top to register service worker
-// If you get an error about not being able to import, double check that you have type=”module” on your <script></script> tag</p>
-
-<p>/*
- This code uses the pwa-update web component https://github.com/pwa-builder/pwa-update to register your service worker,
- tell the user when there is an update available and let the user know when your PWA is ready to use offline.
-*/</p>
-
-<p>import ‘https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate’;</p>
-
-<p>const el = document.createElement(‘pwa-update’);
+const el = document.createElement('pwa-update');
 document.body.appendChild(el);
-&lt;/script&gt;</p>
+</script>
+
 
     </article>
 
