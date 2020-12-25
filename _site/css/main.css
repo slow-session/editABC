@@ -47,7 +47,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .icon > svg path { fill: #fff; }
 
-.wrap { max-width: 100ch; min-height: 100%; display: block; margin-bottom: -30px; margin-left: auto; margin-right: auto; }
+.wrap { max-width: 70ch; min-height: 100%; display: block; margin-bottom: -30px; margin-left: auto; margin-right: auto; }
 
 @media screen and (max-width: 768px) { .wrap { margin-bottom: -84px; } }
 
