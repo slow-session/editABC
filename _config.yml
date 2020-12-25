@@ -1,0 +1,30 @@
+# Site settings
+name: editABC
+email: asjl@lpnz.org
+author: asjl@lpnz
+keywords: irish, traditional, music, jigs, reels, polkas, craic
+description: Simple ABC editor
+
+defaultABCplayer: 'piano'
+
+# Only use this if you are serving your site via Github Pages
+github:
+  url: "https://dev.session.nz"
+
+header: no
+
+# Exclude our ruby stuff and other dirs
+exclude: [.bundle, bin, vendor, Gemfile, Gemfile.lock, Rakefile, s3_website.yml, .last_optimized, _scripts, documentation, archive]
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+
+destination: _site
+
+feed:
+  path: atom.xml
+
+permalink: /blog/:year/:title
+
