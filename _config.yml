@@ -9,7 +9,7 @@ defaultABCplayer: 'piano'
 
 # Only use this if you are serving your site via Github Pages
 github:
-  url: "https://dev.session.nz"
+  url: "https://abcedit.session.nz"
 
 header: no
 
