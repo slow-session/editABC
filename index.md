@@ -94,6 +94,11 @@ function handleABCFileSelect(evt) {
 }
 </script>
 
+<script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
+    ></script>
+
 <script type="module">
 import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
