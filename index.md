@@ -1,16 +1,16 @@
 ---
 layout: page
-title: Edit ABC
+title: editABC
 ---
 
 <div class="row">
+    <!-- Controls for ABC player -->
+    <div id="ABCplayer"></div>
+    
     <!-- Draw the dots -->
     <div class="output audioParentOuter">
         <div id="abcPaper" class="abcPaper">Music Notation Displayed Here</div>
     </div>
-
-    <!-- Controls for ABC player -->
-    <div id="ABCplayer"></div>
 </div>
 <!-- Group the input and controls for ABC-->
 <div class="row">
@@ -94,10 +94,6 @@ function handleABCFileSelect(evt) {
 }
 </script>
 
-<script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
-    ></script>
 
 <script type="module">
 import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
