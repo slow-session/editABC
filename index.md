@@ -14,26 +14,24 @@ title: editABC
 </div>
 <!-- Group the input and controls for ABC-->
 <div class="row">
-    <h3>Open an ABC file:</h3>
-    <input type="file" id="files" class='filterButton' name="files[]" accept=".abc" />
-    <output id="fileInfo"></output>
-    <p />
-</div>
-<div class="row">
-    <h3>Or paste your ABC here:</h3>
+    <h3>Type your ABC here:</h3>
     <!-- Read the modified ABC and play if requested -->
     <textarea name='abc' id="textAreaABC" class="abcText" rows="13" spellcheck="false"></textarea>
     <!-- Show ABC errors -->
     <div id='warnings'></div>
 </div>
 <div class="row">
+    <h3>Or open an ABC file:</h3>
+    <input type="file" id="files" class='filterButton' name="files[]" accept=".abc" />
+    <output id="fileInfo"></output>
+    <p />
+</div>
+<div class="row">
     <!-- Allow the user to save their ABC-->
-    <h3>Don’t forget to Save ABC’ to save your work:</h3>
+    <h3>Don’t forget to 'Save ABC’ to save your work:</h3>
     <form>
-        <span title="Save the ABC you've entered. Don't lose your work!">
-            <input value='Save ABC' type='button' class='filterButton'
-                onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
-        </span>
+        <input value='Save ABC' type='button' class='filterButton'
+            onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
     </form>
     <p />
 </div>
@@ -79,7 +77,6 @@ function handleABCFileSelect(evt) {
             // Display the ABC in the textbox as dots
             let abc_editor = new window.ABCJS.Editor("textAreaABC", { paper_id: "abcPaper", warnings_id:"abcWarnings", render_options: {responsive: 'resize'}, indicate_changed: "true" });
 
-            
             // stop tune currently playing if needed
             var playButton = document.getElementById("playABC1");
             if (typeof playButton !== 'undefined'
