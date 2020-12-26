@@ -36,6 +36,8 @@ title: editABC
     <p />
 </div>
 
+{% include js-libs.html  %}
+
 <script>
 $(document).ready(function () {
     // Check for the various File API support.
