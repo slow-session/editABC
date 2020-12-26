@@ -2,14 +2,11 @@
 layout: page
 title: Edit ABC
 ---
-If you'd like more information on the ABC format check out the
-<a href="http://abcnotation.com/wiki/abc:standard:v2.2">ABC Notation</a>
-guide.
 
 <div class="row">
     <!-- Draw the dots -->
-    <div class="output">
-        <div id="abcPaper" class="abcPaper"></div>
+    <div class="output audioParentOuter">
+        <div id="abcPaper" class="abcPaper">Music Notation Displayed Here</div>
     </div>
 
     <!-- Controls for ABC player -->
