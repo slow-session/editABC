@@ -2,6 +2,12 @@
 layout: page
 title: editABC
 ---
+<script type="module">
+import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+const el = document.createElement('pwa-update');
+document.body.appendChild(el);
+</script>
 
 <div class="row">
     <!-- Controls for ABC player -->
@@ -75,7 +81,8 @@ function handleABCFileSelect(evt) {
             }
 
             // Show the dots
-            textAreaABC.value = this.result; 
+            textAreaABC.value = this.result;
+
             
             // Display the ABC in the textbox as dots
             let abc_editor = new window.ABCJS.Editor("textAreaABC", { paper_id: "abcPaper", warnings_id:"abcWarnings", render_options: {responsive: 'resize'}, indicate_changed: "true" });
@@ -92,13 +99,5 @@ function handleABCFileSelect(evt) {
         reader.readAsText(f);
     }
 }
-</script>
-
-
-<script type="module">
-import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-
-const el = document.createElement('pwa-update');
-document.body.appendChild(el);
 </script>
 
