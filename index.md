@@ -18,7 +18,7 @@ title: editABC
     <!-- Read the modified ABC and play if requested -->
     <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false"></textarea>
     <!-- Show ABC errors -->
-    <div id='warnings'></div>
+    <div id='abcWarnings'></div>
 </div>
 <div class="row">
     <h3>Or open an ABC file:</h3>
