@@ -9,7 +9,7 @@ title: editABC
     
     <!-- Draw the dots -->
     <div class="output audioParentOuter">
-        <div id="abcPaper" class="abcPaper">Music Notation Displayed Here</div>
+        <div id="abcPaper" class="abcPaper"></div>
     </div>
 </div>
 <!-- Group the input and controls for ABC-->
