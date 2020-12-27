@@ -48,12 +48,12 @@ $(document).ready(function () {
         fileInfo.innerHTML = 'The File APIs are not fully supported in this browser.';
     }
     
+    // Display the ABC in the textbox as dots
+    let abc_editor = new window.ABCJS.Editor("textAreaABC", { paper_id: "abcPaper", warnings_id:"abcWarnings", render_options: {responsive: 'resize'}, indicate_changed: "true" });
+    
     // Create the ABC player
     document.getElementById('ABCplayer').innerHTML = abcPlayer.createABCplayer('textAreaABC', '1', '{{ site.defaultABCplayer }}');  
     abcPlayer.createABCsliders("textAreaABC", '1');
-
-    // Display the ABC in the textbox as dots
-    let abc_editor = new window.ABCJS.Editor("textAreaABC", { paper_id: "abcPaper", warnings_id:"abcWarnings", render_options: {responsive: 'resize'}, indicate_changed: "true" });
 });
 
 function handleABCFileSelect(evt) {
