@@ -35,7 +35,7 @@ const abcPlayer = (function () {
     <div class="audioParentOuter" id="ABC${tuneID}">
         <!-- Col 1 -->
         <div class="playpauseButton">
-            <button id="playABC${tuneID}" class="playButton" aria-label="Play" onclick="abcPlayer.playABC(${textArea}, playABC${tuneID}, '100')"></button>
+            <button id="playABC${tuneID}" class="playButton" aria-label="Play/Stop" onclick="abcPlayer.playABC(${textArea}, playABC${tuneID}, '100')"></button>
         </div>
         <!-- Nested row in second column -->
         <div class="audioChildOuter">

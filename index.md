@@ -16,13 +16,13 @@ title: editABC
 <div class="row">
     <h3>Type your ABC here:</h3>
     <!-- Read the modified ABC and play if requested -->
-    <textarea name='abc' id="textAreaABC" class="abcText" rows="13" spellcheck="false"></textarea>
+    <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false"></textarea>
     <!-- Show ABC errors -->
     <div id='warnings'></div>
 </div>
 <div class="row">
     <h3>Or open an ABC file:</h3>
-    <input type="file" id="files" class='filterButton' name="files[]" accept=".abc" />
+    <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
     <output id="fileInfo"></output>
     <p />
 </div>
