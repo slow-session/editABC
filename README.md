@@ -1,3 +1,6 @@
+---
+layout: null
+---
 # editABC
 
 A simple ABC editor which uses some of the code from the https://wellington.session.nz webpages which you can find at
