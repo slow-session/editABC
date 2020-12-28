@@ -29,7 +29,7 @@ document.body.appendChild(el);
     <!-- Show ABC errors -->
     <div id='abcWarnings'></div>
 </div>
-<div class="row small-up-1 medium-up-2 large-up-2">
+<div class="row small-up-2 medium-up-2 large-up-2">
     <div class="small-3 columns">
         <input value='Save ABC file' id='save' type='button' class='filterButton' aria-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
     </div>
