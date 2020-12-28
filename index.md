@@ -12,37 +12,30 @@ document.body.appendChild(el);
 <div class="row">
     <!-- Controls for ABC player -->
     <div id="ABCplayer"></div>
-    
+
     <!-- Draw the dots -->
     <div class="output audioParentOuter">
         <div id="abcPaper" class="abcPaper"></div>
     </div>
 </div>
 <!-- Group the input and controls for ABC-->
+<h3>Open an ABC file or type your ABC below:</h3>
 <div class="row">
-    <h3>Type your ABC here:</h3>
+    <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
+    <output id="fileInfo"></output>
+<div class="row">
     <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false"></textarea>
     <!-- Show ABC errors -->
     <div id='abcWarnings'></div>
 </div>
 <div class="row small-up-1 medium-up-2 large-up-2">
-    <h3>Open and save ABC file:</h3>
-    <div class="small-9 columns">
-        <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
-        <output id="fileInfo"></output>
-    </div>
     <div class="small-3 columns">
-        <!-- Allow the user to save their ABC-->
         <input value='Save ABC file' id='save' type='button' class='filterButton' aria-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
     </div>
-</div>
-<div class="row small-up-1 medium-up-2 large-up-2">
-    <h3>Reset the page:</h3>
     <div class="small-3 columns">
-        <input value='Reset' id='reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()' />
+        <input value='Reset the page' id='reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()'/>
     </div>
 </div>
-
 
 {% include js-libs.html  %}
 
