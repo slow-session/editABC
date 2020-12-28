@@ -217,11 +217,12 @@ p.mp3SpeedLabel {
 }
 
 .filterButton {
-    background-color: $brand-color;
+    background-color: steelblue;
     padding: 7px 5px 4px 5px;
-    margin-right: 5px;
-    margin-left: 5px;
-    color: darken($complimentary-color, 10%);
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: black;
     cursor: pointer;
     border-radius: 8px;
     font-size: 75%;

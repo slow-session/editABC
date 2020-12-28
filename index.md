@@ -25,18 +25,21 @@ document.body.appendChild(el);
     <!-- Show ABC errors -->
     <div id='abcWarnings'></div>
 </div>
-<div class="row">
-    <h3>Or open an ABC file:</h3>
-    <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
-    <output id="fileInfo"></output>
-    <p />
+<div class="row small-up-1 medium-up-2 large-up-2">
+    <h3>Open and save ABC file:</h3>
+    <div class="small-5 columns">
+        <input type="file" id="files" class='filterButton' label="Open ABC file" aria-label="Open ABC file" name="files[]" accept=".abc" />
+        <output id="fileInfo"></output>
+    </div>
+    <div class="small-3 columns">
+        <!-- Allow the user to save their ABC-->
+        <input value='Save ABC file' type='button' class='filterButton' aria-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
+    </div>
+    <div class="small-3 columns">
+        <input value='Reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()' />
+    </div>
 </div>
-<div class="row">
-    <!-- Allow the user to save their ABC-->
-    <h3>Don’t forget to 'Save ABC file’ to save your work:</h3>
-    <input value='Save ABC file' type='button' class='filterButton' area-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
-    <p />
-</div>
+
 
 {% include js-libs.html  %}
 
@@ -94,6 +97,14 @@ function handleABCFileSelect(evt) {
         };
         reader.readAsText(f);
     }
+}
+
+function resetEditABCpage () {
+    document.getElementById("abcPaper").innerHTML = '';
+    document.getElementById("abcPaper").style.paddingBottom = "0px";
+    document.getElementById("abcPaper").style.overflow = "auto";
+    textAreaABC.value = '';
+    document.getElementById('abcWarnings').innerHTML = '';
 }
 </script>
 
