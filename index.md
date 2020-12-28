@@ -23,6 +23,7 @@ document.body.appendChild(el);
 <div class="row">
     <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
     <output id="fileInfo"></output>
+</div>
 <div class="row">
     <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false"></textarea>
     <!-- Show ABC errors -->
