@@ -27,16 +27,19 @@ document.body.appendChild(el);
 </div>
 <div class="row small-up-1 medium-up-2 large-up-2">
     <h3>Open and save ABC file:</h3>
-    <div class="small-5 columns">
-        <input type="file" id="files" class='filterButton' label="Open ABC file" aria-label="Open ABC file" name="files[]" accept=".abc" />
+    <div class="small-9 columns">
+        <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
         <output id="fileInfo"></output>
     </div>
     <div class="small-3 columns">
         <!-- Allow the user to save their ABC-->
-        <input value='Save ABC file' type='button' class='filterButton' aria-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
+        <input value='Save ABC file' id='save' type='button' class='filterButton' aria-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
     </div>
+</div>
+<div class="row small-up-1 medium-up-2 large-up-2">
+    <h3>Reset the page:</h3>
     <div class="small-3 columns">
-        <input value='Reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()' />
+        <input value='Reset' id='reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()' />
     </div>
 </div>
 
@@ -82,7 +85,6 @@ function handleABCFileSelect(evt) {
             // Show the dots
             textAreaABC.value = this.result;
 
-            
             // Display the ABC in the textbox as dots
             let abc_editor = new window.ABCJS.Editor("textAreaABC", { paper_id: "abcPaper", warnings_id:"abcWarnings", render_options: {responsive: 'resize'}, indicate_changed: "true" });
 
@@ -105,6 +107,7 @@ function resetEditABCpage () {
     document.getElementById("abcPaper").style.overflow = "auto";
     textAreaABC.value = '';
     document.getElementById('abcWarnings').innerHTML = '';
+    files.value = '';
 }
 </script>
 
