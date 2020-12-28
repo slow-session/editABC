@@ -21,7 +21,6 @@ document.body.appendChild(el);
 <!-- Group the input and controls for ABC-->
 <div class="row">
     <h3>Type your ABC here:</h3>
-    <!-- Read the modified ABC and play if requested -->
     <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false"></textarea>
     <!-- Show ABC errors -->
     <div id='abcWarnings'></div>
@@ -34,11 +33,8 @@ document.body.appendChild(el);
 </div>
 <div class="row">
     <!-- Allow the user to save their ABC-->
-    <h3>Don’t forget to 'Save ABC’ to save your work:</h3>
-    <form>
-        <input value='Save ABC' type='button' class='filterButton'
-            onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
-    </form>
+    <h3>Don’t forget to 'Save ABC file’ to save your work:</h3>
+    <input value='Save ABC file' type='button' class='filterButton' area-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
     <p />
 </div>
 
