@@ -5,7 +5,7 @@ author: asjl@lpnz
 keywords: irish, traditional, music, jigs, reels, polkas, craic
 description: Simple ABC editor
 
-defaultABCplayer: 'piano'
+defaultABCplayer: '21' # accordion
 
 # Only use this if you are serving your site via Github Pages
 github:
