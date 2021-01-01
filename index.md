@@ -6,28 +6,41 @@ title: editABC
 <!-- Draw the dots -->
 <div class="row">
     <div id="abcPaper" class="abcPaper"></div>
+        <!-- Show ABC errors -->
+    <div id='abcWarnings' class='abcWarnings'></div>
     <div id="abcAudio"></div>    
 </div>
-<div class="row">
+
+<div class="row small-up-1 medium-up-2 large-up-2">
     <!-- Group the input and controls for ABC-->
     <h3>Open an ABC file or type your ABC below:</h3>
-    <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
+    <div class="small-9 columns">
+        <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
+    </div>
     <output id="fileInfo"></output>
-</div>
-<div class="row">
-    <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false">% Set instrument to 'accordion'
-%%MIDI program 21
-</textarea>
-    <!-- Show ABC errors -->
-    <div id='abcWarnings' class='abcWarnings'></div>
-</div>
-<div class="row small-up-2 medium-up-2 large-up-2">
     <div class="small-3 columns">
+        <input value='Show Help' id='help' type='button' class='filterButton' aria-label="Help" onclick='toggleHelp(this)'/>
+    </div>
+</div>
+
+<div id="editHelp" class="row editHelp">
+<h3>Help</h3>
+
+Details to follow....
+</div>
+
+<div class="row">
+    <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false"></textarea>
+</div>
+
+<div class="row small-up-2 medium-up-2 large-up-2">
+    <div class="small-6 columns">
         <input value='Save ABC file' id='save' type='button' class='filterButton' aria-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
     </div>
     <div class="small-3 columns">
         <input value='Reset the page' id='reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()'/>
     </div>
+
 </div>
 
 
@@ -79,10 +92,11 @@ function handleABCFileSelect(evt) {
                 return (1);
             }
             // Show the dots
-            textAreaABC.value += this.result + '\n';
+            textAreaABC.value = this.result + '\n';
             
             // Gross hack to get the ABC to draw after file is loaded
             // The option 'drawABChack' doesn't exist and is silently ignored
+            // but this forces a redraw
             abcEditor.paramChanged({drawABChack: 1});
         };
         reader.readAsText(f);
@@ -107,8 +121,22 @@ function resetEditABCpage () {
     document.getElementById("abcPaper").innerHTML = '';
     document.getElementById("abcPaper").style.paddingBottom = "0px";
     document.getElementById("abcPaper").style.overflow = "auto";
-    textAreaABC.value = "% Set instrument to 'accordion'\n%%MIDI program 21\n";
+    //textAreaABC.value = "% Set instrument to 'accordion'\n%%MIDI program 21\n";
+    textAreaABC.value = "";
     document.getElementById('abcWarnings').innerHTML = 'No errors';
     files.value = '';
+}
+
+function toggleHelp(button) {
+    switch (button.value) {
+        case "Show Help":
+            button.value = "Hide Help";
+            document.getElementById('editHelp').style.display= "block" ;
+            break;
+        case "Hide Help":
+            button.value = "Show Help";
+            document.getElementById('editHelp').style.display= "none" ;
+            break;
+    }
 }
 </script>
