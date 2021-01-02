@@ -25,8 +25,20 @@ title: editABC
 
 <div id="editHelp" class="row editHelp">
 <h3>Help</h3>
+<ul>
+    <li>The <strong>dots</strong> won't appear at the top of the page until you load a file, cut and paste some ABC into the textarea below or type the details in manually. The page can handle one tune at a time. You should <strong>Reset the Page</strong> between tunes.</li>
+    <li>This page is built as a Progressive Web App which means you can install it as Web App if you use Chrome on desktop machines and as desktop app on Android phones.</li> 
+    <li>You may find some interesting behaviour around caching in the browser. This is my first cut at a PWA.</li>
+</ul>
+<p>The code for this page is freely available on GitHub at <https://github.com/slow-session/editABC> and is losely based on the <a href="https://wellington.session.nz/editABC/">editABC</a> page.</p>
 
-Details to follow....
+<p>I plan to add the ability to save the <strong>dots</strong> as PDF probably using <a href="http://pdfkit.org">http://pdfkit.org/</a></p>
+
+
+<h4>Acknowledgments</h4>
+
+<p>The page uses the most excellent <strong>abcjs</strong> Javascript tools written by Paul Rosen and Gregory Dyke available <a href="https://www.abcjs.net/">here.</a> Many thanks to them for all their fine work on this.</p>
+
 </div>
 
 <div class="row">
