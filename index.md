@@ -2,6 +2,9 @@
 layout: page
 title: editABC
 ---
+<script type="module">
+import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+</script>
 
 <!-- Draw the dots -->
 <div class="row">
@@ -57,6 +60,7 @@ title: editABC
 
 
 <script>
+
 let abcEditor = null;
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -151,4 +155,5 @@ function toggleHelp(button) {
             break;
     }
 }
+
 </script>
