@@ -38,7 +38,7 @@ document.body.appendChild(el);
 <h3>Help</h3>
 <ul>
     <li>The <strong>dots</strong> won't appear at the top of the page until you load a file, cut and paste some ABC into the textarea below or type the details in manually. The page can handle one tune at a time. You should <strong>Reset the Page</strong> between tunes.</li>
-    <li>This page is built as a Progressive Web App which means you can install it as a Web App if you use Chrome on desktop machines and as desktop app on Android phones.</li> 
+    <li>This page is built as a Progressive Web App which means you can install it as a Web App if you use Chrome on desktop machines and as a desktop app on Android phones.</li> 
     <li>You may find some interesting behaviour around caching in the browser. This is my first cut at a PWA.</li>
 </ul>
 <p>The code for this page is freely available on GitHub at <a href="https://github.com/slow-session/editABC/">https://github.com/slow-session/editABC/</a>. Bugs etc to asjl@lpnz.org please!</p>
