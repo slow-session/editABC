@@ -13,7 +13,7 @@ const wssTools = (function () {
         pom.setAttribute(
             "href",
             "data:application/download;charset=utf-8," +
-                encodeURIComponent(text)
+            encodeURIComponent(text)
         );
         pom.setAttribute("download", filename);
 
@@ -36,8 +36,6 @@ const wssTools = (function () {
             .replace(/^-+/, "") // Trim - from start of text
             .replace(/-+$/, ""); // Trim - from end of text
     }
-
-    
 
     return {
         downloadABCFile: downloadABCFile,
