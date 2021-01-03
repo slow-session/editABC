@@ -53,7 +53,7 @@ document.body.appendChild(el);
 </div>
 
 <div class="row">
-    <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false"></textarea>
+    <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false" placeholder="Open an ABC file above or type your ABC here..."></textarea>
 </div>
 
 <div class="row small-up-2 medium-up-2 large-up-2">
