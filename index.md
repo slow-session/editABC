@@ -22,10 +22,10 @@ document.body.appendChild(el);
     <div id="abcAudio"></div>    
 </div>
 
-<div class="row small-up-1 medium-up-2 large-up-2">
+<label for="filesRow">Open an ABC file:</label>
+<div id="filesRow" class="row small-up-1 medium-up-2 large-up-2">
     <!-- Group the input and controls for ABC-->
     <div class="small-9 columns">
-        <label for="files">Open an ABC file:</label>
         <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
     </div>
     <output id="fileInfo"></output>
