@@ -24,7 +24,6 @@ document.body.appendChild(el);
 
 <div class="row small-up-1 medium-up-2 large-up-2">
     <!-- Group the input and controls for ABC-->
-    <h3>Open an ABC file:</h3>
     <div class="small-9 columns">
         <label for="files">Open an ABC file:</label>
         <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
