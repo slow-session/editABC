@@ -61,9 +61,6 @@ document.body.appendChild(el);
         <input value='Save ABC file' id='save' type='button' class='filterButton' aria-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
     </div>
     <div class="small-3 columns">
-        <input value='Print the music' id='print' type='button' class='filterButton' onclick='printDiv("abcPaper")' />
-    </div>
-    <div class="small-3 columns">
         <input value='Reset the page' id='reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()'/>
     </div>
 
@@ -167,14 +164,4 @@ function toggleHelp(button) {
     }
 }
 
-function printDiv(divName) {
-     var printContents = document.getElementById(divName).innerHTML;
-     var originalContents = document.body.innerHTML;
-
-     document.body.innerHTML = printContents;
-
-     window.print();
-
-     document.body.innerHTML = originalContents;
-}
 </script>
