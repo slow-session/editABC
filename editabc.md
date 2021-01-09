@@ -1,18 +1,9 @@
 ---
 layout: page
 title: editABC
+permalink: /editabc/
 ---
-<script type="module">
-/*
- This code uses the pwa-update web component https://github.com/pwa-builder/pwa-update to register your service worker,
- tell the user when there is an update available and let the user know when your PWA is ready to use offline.
-*/
 
-import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-
-const el = document.createElement('pwa-update');
-document.body.appendChild(el);
-</script>
 
 <!-- Draw the dots -->
 <div class="row">
@@ -64,11 +55,10 @@ document.body.appendChild(el);
         <input value='Print the music' id='print' type='button' class='filterButton' onclick='printDiv("abcPaper")' />
     </div>
     <div class="small-3 columns">
-        <input value='Reset the page' id='reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()'/>
+        <input value='Reset the page' id='reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()' />
     </div>
 
 </div>
-
 
 <script>
 
