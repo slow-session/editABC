@@ -1,60 +1,21 @@
-.filterButton {
-    background-color: steelblue;
-    padding: 7px 5px 4px 5px;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 75%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: darken($brand-color, 10%);
-}
-
-.abcText {
-    background-color: darken($complimentary-color, 6%);
-    font-size: small;
-    max-width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.abcWarnings {
-    display: inline-block;
-    overflow: auto;
-    border: 2px solid $brand-color;
-    background-color: darken($complimentary-color, 6%);
-    border-radius: 8px;
-    margin: 10px;
-    padding: 10px;
-    color: red;
-}
-
-.editHelp {
-    display: none;
-    overflow: auto;
-    border: 2px solid $brand-color;
-    background-color: darken($complimentary-color, 6%);
-    border-radius: 8px;
-    margin: 10px;
-    padding: 10px;
-}
+/* Copied from abcjs site on 1 Feb 2021 and background-color changed to $brand-color */
+/* Incorporated via _sass mechnism - ASJL */
 
 /* Some basic CSS to make the Audio controls in abcjs presentable. */
 
 .abcjs-inline-audio {
 	height: 26px;
     padding: 0 5px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 	border-radius: 3px;
-	background-color: #668092;
+	background-color: steelblue;
 	display: flex;
 	align-items: center;
 	box-sizing: border-box;
+}
+
+.abcjs-inline-audio.abcjs-disabled {
+	opacity: 0.5;
 }
 
 .abcjs-inline-audio .abcjs-btn {
@@ -117,7 +78,7 @@
 }
 
 .abcjs-inline-audio .abcjs-midi-progress-background {
-	background-color: #668092;
+	background-color: $brand-color;
 	height: 10px;
 	border-radius: 5px;
 	border: 2px solid #cccccc;
@@ -154,7 +115,7 @@
 
 .abcjs-inline-audio .abcjs-tempo-wrapper {
 	font-size: 10px;
-	color: black;
+	color: #f4f4f4;
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
@@ -223,5 +184,6 @@
 	font-size: 20px;
 }
 
-
-
+.abcjs-css-warning {
+	display: none;
+}

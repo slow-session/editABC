@@ -37,10 +37,24 @@ const wssTools = (function () {
             .replace(/-+$/, ""); // Trim - from end of text
     }
 
+    function getABCheaderValue(key, tuneABC) {
+        // Extract the value of one of the ABC keywords e.g. T: Out on the Ocean
+        const KEYWORD_PATTERN = new RegExp(`^\\s*${key}`);
+    
+        const lines = tuneABC.split(/[\r\n]+/).map(line => line.trim());
+        const keyIdx = lines.findIndex(line => line.match(KEYWORD_PATTERN));
+        if (keyIdx < 0) {
+            return '';
+        } else {
+            return lines[keyIdx].split(":")[1].trim();
+        }
+    }
+    
     return {
         downloadABCFile: downloadABCFile,
         downloadFile: downloadFile,
         slugify: slugify,
+        getABCheaderValue: getABCheaderValue,
     };
 })();
 

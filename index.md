@@ -43,9 +43,6 @@ document.body.appendChild(el);
 </ul>
 <p>The code for this page is freely available on GitHub at <a href="https://github.com/slow-session/editABC/">https://github.com/slow-session/editABC/</a>. Bugs etc to asjl@lpnz.org please!</p>
 
-<p>I plan to add the ability to save the <strong>dots</strong> as PDF probably using <a href="http://pdfkit.org">http://pdfkit.org/</a></p>
-
-
 <h4>Acknowledgments</h4>
 
 <p>The page uses the most excellent <strong>abcjs</strong> Javascript tools written by Paul Rosen and Gregory Dyke available <a href="https://www.abcjs.net/">here.</a> Many thanks to them for all their fine work on this.</p>
@@ -81,22 +78,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     abcEditor = new window.ABCJS.Editor("textAreaABC", {
-        paper_id: "abcPaper", 
-        warnings_id:"abcWarnings", 
-        render_options: {responsive: 'resize'}, 
-        indicate_changed: "true", 
+        paper_id: "abcPaper",
+        warnings_id:"abcWarnings",
+        render_options: {responsive: 'resize'},
+        indicate_changed: "true",
         synth: { el: "#abcAudio", options: {
-                displayLoop: true,
+                displayLoop: false,
                 displayRestart: true,
                 displayPlay: true,
                 displayProgress: true,
-                displayWarp: true,
+                displayWarp: false,
             }
         }
     });
 });
 
-//console.log(window.ABCJS.instrumentIndexToName[21]);
 
 function handleABCFileSelect(evt) {
     evt.stopPropagation();
@@ -110,9 +106,9 @@ function handleABCFileSelect(evt) {
 
         reader.onload = function(e) {
             // Is ABC file valid?
-            if ((getABCheaderValue("X:", this.result) == '')
-                || (getABCheaderValue("T:", this.result) == '')
-                || (getABCheaderValue("K:", this.result) == '')) { fileInfo.innerHTML = "Invalid ABC file";
+            if ((wssTools.getABCheaderValue("X:", this.result) == '')
+                || (wssTools.getABCheaderValue("T:", this.result) == '')
+                || (wssTools.getABCheaderValue("K:", this.result) == '')) { fileInfo.innerHTML = "Invalid ABC file";
                 return (1);
             }
             // Show the dots
@@ -127,25 +123,10 @@ function handleABCFileSelect(evt) {
     }
 }
 
-
-function getABCheaderValue(key, tuneABC) {
-    // Extract the value of one of the ABC keywords e.g. T: Out on the Ocean
-    const KEYWORD_PATTERN = new RegExp(`^\\s*${key}`);
-
-    const lines = tuneABC.split(/[\r\n]+/).map(line => line.trim());
-    const keyIdx = lines.findIndex(line => line.match(KEYWORD_PATTERN));
-    if (keyIdx < 0) {
-        return '';
-    } else {
-        return lines[keyIdx].split(":")[1].trim();
-    }
-}
-
 function resetEditABCpage () {
     document.getElementById("abcPaper").innerHTML = '';
     document.getElementById("abcPaper").style.paddingBottom = "0px";
     document.getElementById("abcPaper").style.overflow = "auto";
-    //textAreaABC.value = "% Set instrument to 'accordion'\n%%MIDI program 21\n";
     textAreaABC.value = "";
     document.getElementById('abcWarnings').innerHTML = 'No errors';
     files.value = '';
