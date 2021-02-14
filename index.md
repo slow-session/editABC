@@ -17,19 +17,16 @@ document.body.appendChild(el);
 <!-- Draw the dots -->
 <div class="row">
     <div id="abcPaper" class="abcPaper"></div>
-        <!-- Show ABC errors -->
-    <div id='abcWarnings' class='abcWarnings'></div>
     <div id="abcAudio"></div>    
 </div>
 
 <label for="filesRow">Open an ABC file:</label>
-<div id="filesRow" class="row small-up-1 medium-up-2 large-up-2">
-    <!-- Group the input and controls for ABC-->
-    <div class="small-9 columns">
+<div id="filesRow" class="flexRow">
+    <div class="flexColumn">
         <input type="file" id="files" class='filterButton' aria-label="Open ABC file" name="files[]" accept=".abc" />
     </div>
     <output id="fileInfo"></output>
-    <div class="small-3 columns">
+    <div class="flexColumn">
         <input value='Show Help' id='help' type='button' class='filterButton' aria-label="Help" onclick='toggleHelp(this)'/>
     </div>
 </div>
@@ -46,26 +43,25 @@ document.body.appendChild(el);
 <h4>Acknowledgments</h4>
 
 <p>The page uses the most excellent <strong>abcjs</strong> Javascript tools written by Paul Rosen and Gregory Dyke available <a href="https://www.abcjs.net/">here.</a> Many thanks to them for all their fine work on this.</p>
-
 </div>
 
 <div class="row">
     <textarea name='abc' id="textAreaABC" class="abcText" aria-label="textarea ABC" rows="13" spellcheck="false" placeholder="Or type your ABC here..."></textarea>
 </div>
 
-<div class="row small-up-2 medium-up-2 large-up-2">
-    <div class="small-6 columns">
+<div class="flexRow">
+    <div class="flexColumn">
         <input value='Save ABC file' id='save' type='button' class='filterButton' aria-label="Save ABC file" onclick='wssTools.downloadABCFile(document.getElementById("textAreaABC").value)' />
     </div>
-    <div class="small-3 columns">
+    <div class="flexColumn">
         <input value='Reset the page' id='reset' type='button' class='filterButton' aria-label="Reset page" onclick='resetEditABCpage()'/>
     </div>
-
 </div>
 
+<!-- Show ABC errors -->
+<div id='abcWarnings' class='abcWarnings'></div>
 
 <script>
-
 let abcEditor = null;
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -144,5 +140,4 @@ function toggleHelp(button) {
             break;
     }
 }
-
 </script>
